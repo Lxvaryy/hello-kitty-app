@@ -1,11 +1,18 @@
+const popup = document.getElementById('popup');
+const finalMessage = document.getElementById('final');
+
+// Function for the "Yes" button
 function sayYes() {
-  document.getElementById('popup').classList.add('hidden');
-  document.getElementById('final').classList.remove('hidden');
+  popup.style.display = 'none';  
+  finalMessage.style.display = 'block';  
 }
 
+// Function for the "No" button
 function sayNo() {
-  const meow = document.getElementById("meowSound");
-  meow.currentTime = 0;
-  meow.play();
-  alert("Aww 🥺 Please say yes...");
+  // Randomly move the popup to a new position on the screen
+  const randomX = Math.random() * (window.innerWidth - 300); 
+  const randomY = Math.random() * (window.innerHeight - 300); 
+  
+  popup.style.left = randomX + 'px';
+  popup.style.top = randomY + 'px';
 }
